@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessy Adams App - Complete Mockup</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="device-frame">
+        <div class="app-container">
+            <!-- 1. Signup Screen -->
+            <div class="screen active" id="signup-screen">
+                <div class="screen-header">
+                    <h1>Sign Up</h1>
+                </div>
+                <div class="screen-content">
+                    <form class="auth-form">
+                        <div class="input-group">
+                            <input type="text" placeholder="Full Name" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Confirm Password" class="form-input">
+                        </div>
+                        <button type="button" class="btn-primary" onclick="showScreen('create-account-screen')">Sign Up</button>
+                        <p class="auth-link">Already have an account? <span onclick="showScreen('login-screen')">Login</span></p>
+                    </form>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item active"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 2. Create Account Screen -->
+            <div class="screen" id="create-account-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="showScreen('signup-screen')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1>Create Account</h1>
+                </div>
+                <div class="screen-content">
+                    <div class="create-account-content">
+                        <div class="step-indicator">
+                            <div class="step active"></div>
+                            <div class="step"></div>
+                            <div class="step"></div>
+                        </div>
+                        <h2>Tell us about yourself</h2>
+                        <form class="auth-form">
+                            <div class="input-group">
+                                <input type="text" placeholder="Stage Name" class="form-input">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" placeholder="Genre" class="form-input">
+                            </div>
+                            <div class="input-group">
+                                <textarea placeholder="Bio" class="form-textarea"></textarea>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms">
+                                <label for="terms">I agree to Terms & Conditions</label>
+                            </div>
+                            <button type="button" class="btn-primary" onclick="showScreen('login-screen')">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 3. Login Screen -->
+            <div class="screen" id="login-screen">
+                <div class="screen-header">
+                    <h1>Login</h1>
+                </div>
+                <div class="screen-content">
+                    <form class="auth-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" class="form-input">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Password" class="form-input">
+                        </div>
+                        <button type="button" class="btn-primary" onclick="showScreen('profile-screen')">Login</button>
+                        <p class="auth-link">Don't have an account? <span onclick="showScreen('signup-screen')">Sign Up</span></p>
+                    </form>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item active"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 4. Logout Screen -->
+            <div class="screen" id="logout-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="showScreen('settings-screen')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1>Logout</h1>
+                </div>
+                <div class="screen-content logout-content">
+                    <div class="logout-modal-content">
+                        <h2>Are you sure you want to log out?</h2>
+                        <div class="logout-actions">
+                            <button class="btn-secondary" onclick="showScreen('settings-screen')">Cancel</button>
+                            <button class="btn-primary" onclick="showScreen('login-screen')">Logout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item active"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 5. Profile Screen -->
+            <div class="screen" id="profile-screen">
+                <div class="screen-header">
+                    <h1>Profile</h1>
+                    <button class="menu-btn" onclick="showScreen('settings-screen')">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+                <div class="screen-content">
+                    <div class="profile-section">
+                        <div class="profile-avatar">
+                            <img src="/placeholder.svg?height=80&width=80" alt="Jessy Adams">
+                        </div>
+                        <h2>Jessy Adams</h2>
+                        <p class="profile-bio">Singer-songwriter from Los Angeles, New-school R&B and Jazz</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">1.2K</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500</span>
+                                <span class="stat-label">Following</span>
+                            </div>
+                        </div>
+                        <button class="btn-secondary">Follow User</button>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item active"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 6. Settings Screen -->
+            <div class="screen" id="settings-screen">
+                <div class="screen-header">
+                    <button class="back-btn" onclick="showScreen('profile-screen')">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1>Settings</h1>
+                </div>
+                <div class="screen-content">
+                    <div class="settings-section">
+                        <h3>Account</h3>
+                        <div class="settings-item">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="settings-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="settings-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Password</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="settings-section">
+                        <h3>Preferences</h3>
+                        <div class="settings-item">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="notifications" checked>
+                                <label for="notifications"></label>
+                            </div>
+                        </div>
+                        <div class="settings-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Theme</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                        <div class="settings-item">
+                            <i class="fas fa-language"></i>
+                            <span>Language</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <button class="btn-danger" onclick="showScreen('logout-screen')">Logout</button>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item active"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 7. Shop Screen -->
+            <div class="screen" id="shop-screen">
+                <div class="screen-header">
+                    <h1>Shop</h1>
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="screen-content">
+                    <div class="shop-section">
+                        <h3>New Releases</h3>
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Album">
+                                <p>Echoes of the Night</p>
+                                <span class="price">$12.99</span>
+                            </div>
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Art">
+                                <p>Whispers in the Wind</p>
+                                <span class="price">$8.99</span>
+                            </div>
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Art">
+                                <p>Shadows and Light</p>
+                                <span class="price">$15.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-section">
+                        <h3>Featured Merchandise</h3>
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="T-shirt">
+                                <p>Concert T-Shirt</p>
+                                <span class="price">$24.99</span>
+                            </div>
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Hoodie">
+                                <p>Jessy Adams Hoodie</p>
+                                <span class="price">$49.99</span>
+                            </div>
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Poster">
+                                <p>Signed Event Poster</p>
+                                <span class="price">$19.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item active"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 8. Forum Screen -->
+            <div class="screen" id="forum-screen">
+                <div class="screen-header">
+                    <h1>Forum</h1>
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="screen-content">
+                    <div class="forum-posts">
+                        <div class="forum-post">
+                            <div class="post-header">
+                                <div class="post-avatar">
+                                    <img src="/placeholder.svg?height=40&width=40" alt="User">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Sarah Richardson</h4>
+                                    <span class="post-time">2h ago</span>
+                                </div>
+                            </div>
+                            <p class="post-content">Just listened to the new track! Absolutely amazing vocals as always 🎵</p>
+                            <div class="post-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i> 24</button>
+                                <button class="action-btn"><i class="fas fa-comment"></i> 8</button>
+                                <button class="action-btn"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="forum-post">
+                            <div class="post-header">
+                                <div class="post-avatar">
+                                    <img src="/placeholder.svg?height=40&width=40" alt="User">
+                                </div>
+                                <div class="post-info">
+                                    <h4>Marcus Chen</h4>
+                                    <span class="post-time">4h ago</span>
+                                </div>
+                            </div>
+                            <p class="post-content">Can't wait for the upcoming concert! Who else is going?</p>
+                            <div class="post-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i> 15</button>
+                                <button class="action-btn"><i class="fas fa-comment"></i> 12</button>
+                                <button class="action-btn"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="community-highlight">
+                            <img src="/placeholder.svg?height=150&width=300" alt="Community">
+                            <div class="highlight-text">
+                                <h4>Community Highlights</h4>
+                                <p>Fan Discussion: Favorite Songs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item active"><i class="fas fa-comments"></i></div>
+                    <div class="nav-item"><i class="fas fa-heart"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+
+            <!-- 9. Music Screen -->
+            <div class="screen" id="music-screen">
+                <div class="screen-header">
+                    <h1>Music</h1>
+                    <button class="menu-btn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+                <div class="screen-content">
+                    <div class="music-player">
+                        <div class="album-art">
+                            <img src="/placeholder.svg?height=250&width=250" alt="New Dawn Album">
+                        </div>
+                        <div class="song-info">
+                            <h3>New Dawn</h3>
+                            <p>Jessy Adams</p>
+                        </div>
+                        <div class="player-controls">
+                            <button class="control-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button class="control-btn play-btn" onclick="togglePlayPause()">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <button class="control-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="time-info">
+                                <span>2:34</span>
+                                <span>4:12</span>
+                            </div>
+                        </div>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-down"></i>
+                            <div class="volume-bar">
+                                <div class="volume-level"></div>
+                            </div>
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-nav">
+                    <div class="nav-item"><i class="fas fa-home"></i></div>
+                    <div class="nav-item"><i class="fas fa-search"></i></div>
+                    <div class="nav-item"><i class="fas fa-plus"></i></div>
+                    <div class="nav-item active"><i class="fas fa-music"></i></div>
+                    <div class="nav-item"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen Navigation (Demo purposes) -->
+    <div class="screen-selector">
+        <button onclick="showScreen('signup-screen')">Signup</button>
+        <button onclick="showScreen('create-account-screen')">Create</button>
+        <button onclick="showScreen('login-screen')">Login</button>
+        <button onclick="showScreen('logout-screen')">Logout</button>
+        <button onclick="showScreen('profile-screen')">Profile</button>
+        <button onclick="showScreen('settings-screen')">Settings</button>
+        <button onclick="showScreen('shop-screen')">Shop</button>
+        <button onclick="showScreen('forum-screen')">Forum</button>
+        <button onclick="showScreen('music-screen')">Music</button>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
